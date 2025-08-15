@@ -1,0 +1,261 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+.toolbar {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.tool-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    white-space: nowrap;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 8px 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+input[type="color"] {
+    width: 45px;
+    height: 35px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    padding: 2px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+input[type="color"]:hover {
+    border-color: #007bff;
+}
+
+button {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 縮放按鈕特殊樣式 */
+#zoom-out, #zoom-in {
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 40px;
+}
+
+#zoom-reset {
+    background-color: #6c757d;
+    font-size: 12px;
+    padding: 8px 12px;
+}
+
+#zoom-reset:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+/* 頁面導航按鈕 */
+#prev-page, #next-page {
+    background-color: #28a745;
+    min-width: 80px;
+}
+
+#prev-page:hover:not(:disabled), #next-page:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+#page-info {
+    font-weight: 600;
+    color: #495057;
+    padding: 0 15px;
+    min-width: 60px;
+    text-align: center;
+}
+
+#zoom-level {
+    font-weight: 600;
+    color: #495057;
+    padding: 0 15px;
+    min-width: 60px;
+    text-align: center;
+}
+
+#export-pdf-btn {
+    background-color: #dc3545;
+    font-weight: 600;
+    padding: 12px 24px;
+}
+
+#export-pdf-btn:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+#pdf-viewer-container {
+    margin: 20px auto;
+    max-width: 1200px;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow: auto;
+    height: 80vh;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#pdf-viewer {
+    position: relative;
+}
+
+#pdf-viewer canvas {
+    display: block;
+    margin: 15px auto;
+    border: 2px solid #adb5bd;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    cursor: crosshair;
+    transition: box-shadow 0.2s;
+}
+
+#pdf-viewer canvas:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* 動態新增的文字輸入框樣式 */
+textarea.pdf-textbox {
+    position: absolute;
+    border: 2px solid #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+    padding: 6px 8px;
+    margin: 0;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+    line-height: 1.2;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    transition: all 0.2s;
+    z-index: 1001;
+    min-width: 60px;
+    min-height: 24px;
+}
+
+textarea.pdf-textbox:focus {
+    background-color: rgba(0, 123, 255, 0.15);
+    border-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    transform: scale(1.02);
+}
+
+/* 文字預覽樣式 */
+.text-preview {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 2px solid rgba(0, 123, 255, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 確保文字預覽不會重疊 */
+.text-preview:not(:first-child) {
+    margin-top: 2px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .tool-group {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    #pdf-viewer-container {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+    
+    button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}

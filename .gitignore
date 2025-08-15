@@ -1,0 +1,77 @@
+# 系統檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 編輯器檔案
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 暫存檔案
+*.tmp
+*.temp
+*.log
+
+# 私人檔案和敏感信息
+.env
+.env.local
+.env.production
+config.json
+secrets.json
+*.key
+*.pem
+*.p12
+
+# 使用者個人檔案
+personal/
+private/
+backup/
+*.bak
+
+# 大型檔案
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.iso
+
+# 字型檔案 (可選，如果不想上傳字型檔案)
+# *.ttf
+# *.otf
+# *.woff
+# *.woff2
+
+# 測試檔案
+test/
+tests/
+*.test.js
+*.spec.js
+
+# 建置檔案
+dist/
+build/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 作業系統檔案
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Windows 檔案
+*.lnk
+
+# 瀏覽器快取
+.cache/
+*.cache
+
+# 其他
+*.pid
+*.seed
+*.pid.lock

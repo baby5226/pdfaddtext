@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 增加文字</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>PDF 增加文字</h1>
+    <p>支援繁體中文的 PDF 文字編輯工具，點擊 PDF 頁面任意位置即可新增文字方塊並開始輸入。</p>
+
+    <div class="toolbar">
+        <div class="tool-group">
+            <label for="pdf-upload">匯入 PDF:</label>
+            <input type="file" id="pdf-upload" accept=".pdf">
+        </div>
+        
+        <div class="tool-group">
+            <label for="font-size">字型大小:</label>
+            <input type="number" id="font-size" value="16" min="8" max="72">
+        </div>
+        
+        <div class="tool-group">
+            <label for="font-color">字型顏色:</label>
+            <input type="color" id="font-color" value="#000000">
+        </div>
+        
+        <div class="tool-group">
+            <label for="font-bold">
+                <input type="checkbox" id="font-bold"> 粗體
+            </label>
+        </div>
+        
+        <div class="tool-group">
+            <label for="page-jumper">跳至頁面:</label>
+            <input type="number" id="page-jumper" min="1" placeholder="頁碼">
+            <button id="jump-to-page-btn">前往</button>
+        </div>
+
+        <div class="tool-group">
+            <button id="export-pdf-btn" disabled>4. 匯出 PDF</button>
+        </div>
+    </div>
+
+    <div id="pdf-viewer-container">
+        <div id="pdf-viewer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit/dist/fontkit.umd.js"></script>
+    
+    <script src="fonts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

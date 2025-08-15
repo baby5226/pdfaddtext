@@ -1,0 +1,35 @@
+# 文字檔案自動處理換行符
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+
+# 二進制檔案
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
+# 腳本檔案
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 壓縮檔案
+*.zip binary
+*.rar binary
+*.7z binary
+*.tar.gz binary
+
+# 其他
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
